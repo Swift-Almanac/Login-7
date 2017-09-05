@@ -13,6 +13,9 @@
 		BEB72AAC1F5771120067BC00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEB72AAA1F5771120067BC00 /* Main.storyboard */; };
 		BEB72AAF1F5771120067BC00 /* __Login.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BEB72AAD1F5771120067BC00 /* __Login.xcdatamodeld */; };
 		BEB72AB11F5771120067BC00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB72AB01F5771120067BC00 /* Assets.xcassets */; };
+		BEDFD8371F5D6A0300190545 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDFD8361F5D6A0300190545 /* HomeViewController.swift */; };
+		BEDFD8391F5D6CA500190545 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDFD8381F5D6CA500190545 /* UserDefaults.swift */; };
+		BEDFD83B1F5D814000190545 /* LaunchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDFD83A1F5D814000190545 /* LaunchingViewController.swift */; };
 		BEEF0F4A1F5CF605003A978F /* String+ValidEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEF0F491F5CF605003A978F /* String+ValidEmail.swift */; };
 		BEEF0F4C1F5CF7AD003A978F /* LoginViewController+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEF0F4B1F5CF7AD003A978F /* LoginViewController+TextField.swift */; };
 		BEEF0F4F1F5CF975003A978F /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEF0F4E1F5CF975003A978F /* UserData.swift */; };
@@ -28,6 +31,9 @@
 		BEB72AAE1F5771120067BC00 /* __Login.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = __Login.xcdatamodel; sourceTree = "<group>"; };
 		BEB72AB01F5771120067BC00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEB72AB51F5771120067BC00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEDFD8361F5D6A0300190545 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BEDFD8381F5D6CA500190545 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		BEDFD83A1F5D814000190545 /* LaunchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchingViewController.swift; sourceTree = "<group>"; };
 		BEEF0F491F5CF605003A978F /* String+ValidEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ValidEmail.swift"; sourceTree = "<group>"; };
 		BEEF0F4B1F5CF7AD003A978F /* LoginViewController+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+TextField.swift"; sourceTree = "<group>"; };
 		BEEF0F4E1F5CF975003A978F /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -89,6 +95,8 @@
 		BEB72ABB1F5771290067BC00 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BEDFD8361F5D6A0300190545 /* HomeViewController.swift */,
+				BEDFD83A1F5D814000190545 /* LaunchingViewController.swift */,
 				BEB72AA81F5771120067BC00 /* LoginViewController.swift */,
 			);
 			path = ViewControllers;
@@ -109,6 +117,7 @@
 				BEB72AB01F5771120067BC00 /* Assets.xcassets */,
 				BEB72AAD1F5771120067BC00 /* __Login.xcdatamodeld */,
 				BEEF0F4E1F5CF975003A978F /* UserData.swift */,
+				BEDFD8381F5D6CA500190545 /* UserDefaults.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,9 +260,12 @@
 			files = (
 				BEEF0F4F1F5CF975003A978F /* UserData.swift in Sources */,
 				BEEF0F4A1F5CF605003A978F /* String+ValidEmail.swift in Sources */,
+				BEDFD83B1F5D814000190545 /* LaunchingViewController.swift in Sources */,
 				BEB72AA91F5771120067BC00 /* LoginViewController.swift in Sources */,
 				BEEF0F4C1F5CF7AD003A978F /* LoginViewController+TextField.swift in Sources */,
+				BEDFD8391F5D6CA500190545 /* UserDefaults.swift in Sources */,
 				BEB72AA71F5771120067BC00 /* AppDelegate.swift in Sources */,
+				BEDFD8371F5D6A0300190545 /* HomeViewController.swift in Sources */,
 				BEB72AAF1F5771120067BC00 /* __Login.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

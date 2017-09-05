@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+var userData = UserData()
+
 enum LoginResults {
     case userNotExist
     case userExists
@@ -27,6 +29,7 @@ class UserData {
     
     init() {
         loadUsers()
+        
     }
     
     func loadUsers() {

@@ -8,7 +8,6 @@
 
 import UIKit
 
-var userData = UserData()
 
 class LoginViewController: UIViewController {
     
@@ -33,8 +32,14 @@ class LoginViewController: UIViewController {
         passwordText.addTarget(self, action: #selector(LoginViewController.textFieldDidChange(_:)),
                             for: UIControlEvents.editingChanged)
         
+        setDefaultValues()
         checkLoginButtonActive()
-
+    }
+    
+    func setDefaultValues() {
+        emailText.text = ourDefaults.username
+        passwordText.text = ourDefaults.password
+        autoLoginSwitch.isOn = ourDefaults.autoLogin
     }
     
     
@@ -46,7 +51,21 @@ class LoginViewController: UIViewController {
         }
     }
     
+    func saveUserDefaults(username: String, password: String) {
+        if autoLoginSwitch.isOn {
+            ourDefaults.saveUserDefaults(username: username, password: password, autoLogin: autoLoginSwitch.isOn)
+        }
+        else {
+            ourDefaults.saveUserDefaults(username: "", password: "", autoLogin: false)
+        }
+    }
     
+    func moveToHomeController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc  = storyboard.instantiateViewController(withIdentifier: "HomeNC") as! UINavigationController
+        show(vc, sender: self)
+    }
+
     @IBAction func loginButton(_ sender: UIButton) {
         
         let username = emailText.text!
@@ -55,24 +74,20 @@ class LoginViewController: UIViewController {
         if userData.checkUser(username: username) == LoginResults.userNotExist {
             userData.addUser(username: username, password: password)
             userData.saveUsers()
-            //  Write to User Defaults
-            //  Move to Main View
-            
+            saveUserDefaults(username: username, password: password)
+            moveToHomeController()
         } else {
             if userData.login(username: username, password: password) == .loginSucceeds {
                 print ("Login Succeeded")
-                
-                // Write to UserDeafults
-                // Move to Main View
-                
+                saveUserDefaults(username: username, password: password)
+                moveToHomeController()
             }else { // Login Failed
                 print ("Login Failed")
-                
-                //   Show an Alert
+                let alert = UIAlertController(title: "Login Failed", message: "Your Password is incorrect", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
-            
         }
     }
-    
 }
 
