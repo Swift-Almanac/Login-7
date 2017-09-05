@@ -8,20 +8,20 @@
 
 import UIKit
 
-let ourDefaults = OurDefaults()
 
 class OurDefaults {
+
+    static let shared = OurDefaults()
+
     var  username: String = ""
     var  password: String = ""
     var  autoLogin: Bool = false
-    
-    static var loaded: Bool = false
-    
-    init() {
-            loadUesrDefaults()
+
+    private init() {
+        
     }
 
-    func loadUesrDefaults() {
+    func loadUserDefaults() {
         
         //   Int the initial run UserDefaults will be empty so we need to run these tests.
         //   .string returns an optional.

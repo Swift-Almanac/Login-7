@@ -20,7 +20,7 @@ class LaunchingViewController: UIViewController {
         //Lets Pause on the Launch Screen for 3 seconds)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
-            _ = ourDefaults
+            OurDefaults.shared.loadUserDefaults()
         })
     }
     

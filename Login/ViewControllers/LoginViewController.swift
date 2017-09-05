@@ -37,9 +37,9 @@ class LoginViewController: UIViewController {
     }
     
     func setDefaultValues() {
-        emailText.text = ourDefaults.username
-        passwordText.text = ourDefaults.password
-        autoLoginSwitch.isOn = ourDefaults.autoLogin
+        emailText.text = OurDefaults.shared.username
+        passwordText.text = OurDefaults.shared.password
+        autoLoginSwitch.isOn = OurDefaults.shared.autoLogin
     }
     
     
@@ -53,10 +53,10 @@ class LoginViewController: UIViewController {
     
     func saveUserDefaults(username: String, password: String) {
         if autoLoginSwitch.isOn {
-            ourDefaults.saveUserDefaults(username: username, password: password, autoLogin: autoLoginSwitch.isOn)
+            OurDefaults.shared.saveUserDefaults(username: username, password: password, autoLogin: autoLoginSwitch.isOn)
         }
         else {
-            ourDefaults.saveUserDefaults(username: "", password: "", autoLogin: false)
+            OurDefaults.shared.saveUserDefaults(username: "", password: "", autoLogin: false)
         }
     }
     
@@ -74,12 +74,12 @@ class LoginViewController: UIViewController {
         if userData.checkUser(username: username) == LoginResults.userNotExist {
             userData.addUser(username: username, password: password)
             userData.saveUsers()
-            saveUserDefaults(username: username, password: password)
+            OurDefaults.shared.saveUserDefaults(username: username, password: password, autoLogin: autoLoginSwitch.isOn)
             moveToHomeController()
         } else {
             if userData.login(username: username, password: password) == .loginSucceeds {
                 print ("Login Succeeded")
-                saveUserDefaults(username: username, password: password)
+                OurDefaults.shared.saveUserDefaults(username: username, password: password, autoLogin: autoLoginSwitch.isOn)
                 moveToHomeController()
             }else { // Login Failed
                 print ("Login Failed")
