@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		61E98F017A4EF52785EAF320 /* Pods_Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C86613B7D8E01D9A8CCB99 /* Pods_Login.framework */; };
+		BEA1B4311F6F4FD70018AAC2 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA1B4301F6F4FD70018AAC2 /* GameKit.framework */; };
 		BEB72AA71F5771120067BC00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB72AA61F5771120067BC00 /* AppDelegate.swift */; };
 		BEB72AA91F5771120067BC00 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB72AA81F5771120067BC00 /* LoginViewController.swift */; };
 		BEB72AAC1F5771120067BC00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEB72AAA1F5771120067BC00 /* Main.storyboard */; };
@@ -24,6 +25,8 @@
 /* Begin PBXFileReference section */
 		1F1C575FFB8B14D040A2C22B /* Pods-Login.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Login/Pods-Login.debug.xcconfig"; sourceTree = "<group>"; };
 		74DC67782B1658C314032516 /* Pods-Login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login.release.xcconfig"; path = "Pods/Target Support Files/Pods-Login/Pods-Login.release.xcconfig"; sourceTree = "<group>"; };
+		BEA1B4301F6F4FD70018AAC2 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		BEA1B4321F6F4FDA0018AAC2 /* Login.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Login.entitlements; sourceTree = "<group>"; };
 		BEB72AA31F5771120067BC00 /* Login.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Login.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB72AA61F5771120067BC00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEB72AA81F5771120067BC00 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61E98F017A4EF52785EAF320 /* Pods_Login.framework in Frameworks */,
+				BEA1B4311F6F4FD70018AAC2 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +86,7 @@
 		BEB72AA51F5771120067BC00 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				BEA1B4321F6F4FDA0018AAC2 /* Login.entitlements */,
 				BEB72AAA1F5771120067BC00 /* Main.storyboard */,
 				BEB72AA61F5771120067BC00 /* AppDelegate.swift */,
 				BEB72AB51F5771120067BC00 /* Info.plist */,
@@ -125,6 +130,7 @@
 		DFCB4E17DEF503531485AFA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BEA1B4301F6F4FD70018AAC2 /* GameKit.framework */,
 				F4C86613B7D8E01D9A8CCB99 /* Pods_Login.framework */,
 			);
 			name = Frameworks;
@@ -166,6 +172,17 @@
 					BEB72AA21F5771120067BC00 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -400,7 +417,7 @@
 				DEVELOPMENT_TEAM = WD65G8C4YP;
 				INFOPLIST_FILE = "$(SRCROOT)/Login/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftalmanac.Login;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftalmanac.login;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -416,7 +433,7 @@
 				DEVELOPMENT_TEAM = WD65G8C4YP;
 				INFOPLIST_FILE = "$(SRCROOT)/Login/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftalmanac.Login;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftalmanac.login;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
