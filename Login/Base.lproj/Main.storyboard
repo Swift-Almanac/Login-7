@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iGo-HP-2Um">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iGo-HP-2Um">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController title="Launching.... " id="iGo-HP-2Um" customClass="LaunchingViewController" customModule="Login" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cTt-2K-s5v">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Launching.... " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQC-ob-xgs">
-                                <rect key="frame" x="8" y="28" width="359" height="631"/>
+                                <rect key="frame" x="8" y="28" width="304" height="532"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,11 +44,11 @@
             <objects>
                 <viewController storyboardIdentifier="LoginVC" title="Login View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Login" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CIj-Dq-jX7">
-                                <rect key="frame" x="87.5" y="288.5" width="200" height="30"/>
+                                <rect key="frame" x="60" y="239" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="OUN-GP-pE7"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Os8-Ix-wro"/>
@@ -58,7 +58,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kh4-z1-bOh">
-                                <rect key="frame" x="87.5" y="334.5" width="200" height="30"/>
+                                <rect key="frame" x="60" y="285" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="bKd-QG-cIf"/>
                                     <constraint firstAttribute="height" constant="30" id="vy8-PL-MEh"/>
@@ -68,24 +68,41 @@
                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FbL-ZY-K65">
-                                <rect key="frame" x="227.5" y="380.5" width="62" height="30"/>
+                                <rect key="frame" x="200" y="331" width="62" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="TaD-k9-Yvf"/>
                                     <constraint firstAttribute="width" constant="60" id="VbN-F5-vTu"/>
                                 </constraints>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto Login" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdn-HX-le3">
-                                <rect key="frame" x="111.5" y="385.5" width="100" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto Login" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdn-HX-le3" userLabel="Auto Login Label">
+                                <rect key="frame" x="34" y="336" width="150" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="XmA-AT-Nnu"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="mis-17-2Ey"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="mis-17-2Ey"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vBQ-1m-AIj" userLabel="iCloud Switch">
+                                <rect key="frame" x="199.5" y="368.5" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="MnK-77-lus"/>
+                                    <constraint firstAttribute="width" constant="60" id="ZLm-Am-BEk"/>
+                                </constraints>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use iCloud" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3d-EF-Zfg">
+                                <rect key="frame" x="34" y="378" width="150" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="17f-8Z-J0h"/>
+                                    <constraint firstAttribute="height" constant="21" id="gO3-tv-84s"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUC-hr-MHZ">
-                                <rect key="frame" x="137.5" y="426.5" width="150" height="30"/>
+                                <rect key="frame" x="110" y="423" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="bZT-PJ-Cxh"/>
                                     <constraint firstAttribute="height" constant="30" id="k1V-lW-TqF"/>
@@ -99,17 +116,23 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="kh4-z1-bOh" firstAttribute="trailing" secondItem="lUC-hr-MHZ" secondAttribute="trailing" id="0Sk-KK-3dL"/>
-                            <constraint firstItem="fdn-HX-le3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="3t1-FF-Un5"/>
+                            <constraint firstItem="vBQ-1m-AIj" firstAttribute="top" secondItem="FbL-ZY-K65" secondAttribute="bottom" constant="7.5" id="1hX-6v-U7Y"/>
+                            <constraint firstItem="fdn-HX-le3" firstAttribute="trailing" secondItem="FbL-ZY-K65" secondAttribute="leading" constant="-16" id="3t1-FF-Un5"/>
                             <constraint firstItem="kh4-z1-bOh" firstAttribute="top" secondItem="CIj-Dq-jX7" secondAttribute="bottom" constant="16" id="4mS-HF-ipP"/>
+                            <constraint firstItem="l3d-EF-Zfg" firstAttribute="top" secondItem="fdn-HX-le3" secondAttribute="bottom" constant="21" id="BmM-W1-m5Q"/>
                             <constraint firstItem="CIj-Dq-jX7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="C3C-vy-ZUq"/>
-                            <constraint firstItem="lUC-hr-MHZ" firstAttribute="top" secondItem="FbL-ZY-K65" secondAttribute="bottom" constant="16" id="C5Z-yI-fL9"/>
-                            <constraint firstItem="kh4-z1-bOh" firstAttribute="trailing" secondItem="FbL-ZY-K65" secondAttribute="trailing" id="KfV-xs-hZ2"/>
+                            <constraint firstItem="lUC-hr-MHZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="OMg-OS-bMY"/>
+                            <constraint firstItem="vBQ-1m-AIj" firstAttribute="trailing" secondItem="FbL-ZY-K65" secondAttribute="trailing" id="ScA-1R-dti"/>
                             <constraint firstItem="CIj-Dq-jX7" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-40" id="Wht-In-rub"/>
                             <constraint firstItem="FbL-ZY-K65" firstAttribute="top" secondItem="kh4-z1-bOh" secondAttribute="bottom" constant="16" id="a1k-Ic-S2F"/>
+                            <constraint firstItem="kh4-z1-bOh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bBz-Qs-LBj"/>
+                            <constraint firstItem="l3d-EF-Zfg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="gIQ-Xr-vJm"/>
                             <constraint firstItem="fdn-HX-le3" firstAttribute="top" secondItem="kh4-z1-bOh" secondAttribute="bottom" constant="21" id="j5V-Sl-zbM"/>
-                            <constraint firstItem="kh4-z1-bOh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="nJa-d5-wfm"/>
-                            <constraint firstItem="lUC-hr-MHZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="oCD-6w-AwN"/>
-                            <constraint firstItem="FbL-ZY-K65" firstAttribute="leading" secondItem="fdn-HX-le3" secondAttribute="trailing" constant="16" id="pmv-f0-4vq"/>
+                            <constraint firstItem="lUC-hr-MHZ" firstAttribute="trailing" secondItem="kh4-z1-bOh" secondAttribute="trailing" id="oCD-6w-AwN"/>
+                            <constraint firstItem="FbL-ZY-K65" firstAttribute="trailing" secondItem="kh4-z1-bOh" secondAttribute="trailing" id="pmv-f0-4vq"/>
+                            <constraint firstItem="lUC-hr-MHZ" firstAttribute="top" secondItem="vBQ-1m-AIj" secondAttribute="bottom" constant="24.5" id="tJQ-Ud-y4c"/>
+                            <constraint firstItem="fdn-HX-le3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="tM1-5Q-9dZ"/>
+                            <constraint firstItem="l3d-EF-Zfg" firstAttribute="trailing" secondItem="vBQ-1m-AIj" secondAttribute="leading" constant="-16" id="xQB-p8-03Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -131,11 +154,11 @@
             <objects>
                 <viewController storyboardIdentifier="HomeVC" title="Home View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dDg-Ly-c2i" customClass="HomeViewController" customModule="Login" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s1E-Ts-Vrt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEr-hm-jlG">
-                                <rect key="frame" x="8" y="72" width="359" height="587"/>
+                                <rect key="frame" x="8" y="72" width="304" height="488"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Home Controller Logged In">
                                         <attributes>
@@ -177,7 +200,7 @@
                 <navigationController storyboardIdentifier="HomeNC" automaticallyAdjustsScrollViewInsets="NO" id="mVr-Om-bOm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="W5j-dP-6iP">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
