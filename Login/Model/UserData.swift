@@ -28,8 +28,6 @@ class UserData {
     var users: [User] = []
     
     init() {
-        loadUsers()
-        
     }
     
     func loadUsers() {

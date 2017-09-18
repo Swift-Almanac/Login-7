@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		61E98F017A4EF52785EAF320 /* Pods_Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C86613B7D8E01D9A8CCB99 /* Pods_Login.framework */; };
 		BE17762A1F6F5587007A30D6 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1776291F6F5587007A30D6 /* CloudKit.framework */; };
+		BE17764A1F6F7049007A30D6 /* CloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1776491F6F7049007A30D6 /* CloudKit.swift */; };
 		BEA1B4311F6F4FD70018AAC2 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA1B4301F6F4FD70018AAC2 /* GameKit.framework */; };
 		BEB72AA71F5771120067BC00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB72AA61F5771120067BC00 /* AppDelegate.swift */; };
 		BEB72AA91F5771120067BC00 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB72AA81F5771120067BC00 /* LoginViewController.swift */; };
@@ -27,6 +28,7 @@
 		1F1C575FFB8B14D040A2C22B /* Pods-Login.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Login/Pods-Login.debug.xcconfig"; sourceTree = "<group>"; };
 		74DC67782B1658C314032516 /* Pods-Login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login.release.xcconfig"; path = "Pods/Target Support Files/Pods-Login/Pods-Login.release.xcconfig"; sourceTree = "<group>"; };
 		BE1776291F6F5587007A30D6 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		BE1776491F6F7049007A30D6 /* CloudKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKit.swift; sourceTree = "<group>"; };
 		BEA1B4301F6F4FD70018AAC2 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		BEA1B4321F6F4FDA0018AAC2 /* Login.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Login.entitlements; sourceTree = "<group>"; };
 		BEB72AA31F5771120067BC00 /* Login.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Login.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +128,7 @@
 				BEB72AAD1F5771120067BC00 /* __Login.xcdatamodeld */,
 				BEEF0F4E1F5CF975003A978F /* UserData.swift */,
 				BEDFD8381F5D6CA500190545 /* UserDefaults.swift */,
+				BE1776491F6F7049007A30D6 /* CloudKit.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				BEEF0F4A1F5CF605003A978F /* String+ValidEmail.swift in Sources */,
 				BEDFD83B1F5D814000190545 /* LaunchingViewController.swift in Sources */,
 				BEB72AA91F5771120067BC00 /* LoginViewController.swift in Sources */,
+				BE17764A1F6F7049007A30D6 /* CloudKit.swift in Sources */,
 				BEEF0F4C1F5CF7AD003A978F /* LoginViewController+TextField.swift in Sources */,
 				BEDFD8391F5D6CA500190545 /* UserDefaults.swift in Sources */,
 				BEB72AA71F5771120067BC00 /* AppDelegate.swift in Sources */,
@@ -421,6 +425,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WD65G8C4YP;
 				INFOPLIST_FILE = "$(SRCROOT)/Login/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftalmanac.login;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -438,6 +443,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WD65G8C4YP;
 				INFOPLIST_FILE = "$(SRCROOT)/Login/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftalmanac.login;
 				PRODUCT_NAME = "$(TARGET_NAME)";

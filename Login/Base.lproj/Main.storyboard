@@ -90,6 +90,9 @@
                                     <constraint firstAttribute="height" constant="30" id="MnK-77-lus"/>
                                     <constraint firstAttribute="width" constant="60" id="ZLm-Am-BEk"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="useiCloudSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="Esh-0e-oN5"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use iCloud" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3d-EF-Zfg">
                                 <rect key="frame" x="34" y="378" width="150" height="21"/>
@@ -143,11 +146,12 @@
                         <outlet property="loginButton" destination="lUC-hr-MHZ" id="Wri-tP-jus"/>
                         <outlet property="loginLabel" destination="fdn-HX-le3" id="4eL-nx-fJq"/>
                         <outlet property="passwordText" destination="kh4-z1-bOh" id="aGY-uM-brB"/>
+                        <outlet property="useiCloudSwitch" destination="vBQ-1m-AIj" id="Dcd-pu-Rb7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-288.80000000000001" y="-59.820089955022496"/>
+            <point key="canvasLocation" x="-840" y="-193"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="mJs-qk-fdW">

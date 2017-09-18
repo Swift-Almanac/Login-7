@@ -16,6 +16,7 @@ class OurDefaults {
     var  username: String = ""
     var  password: String = ""
     var  autoLogin: Bool = false
+    var  useiCloud: Bool = false
 
     private init() {
         
@@ -36,11 +37,8 @@ class OurDefaults {
         //  Bools have a default of false for UesrDefaults ( Initial Case)
         
         autoLogin = UserDefaults.standard.bool(forKey: "autologin")
-        
-        print(username)
-        print(password)
-        print(autoLogin)
-                
+        useiCloud = UserDefaults.standard.bool(forKey: "icloud")
+                        
         if autoLogin {
             
             //   Show Home View Controller
@@ -54,6 +52,12 @@ class OurDefaults {
             
             //Show Login View Controller
             
+            if useiCloud {
+                ckUserData.loadUsers()
+            } else {
+                userData.loadUsers()
+            }
+
             let mainStoryBoard: UIStoryboard = UIStoryboard(name:"Main", bundle: nil)
             let loginViewController: UIViewController = mainStoryBoard.instantiateViewController(withIdentifier: "LoginVC")
             let lvc = LaunchingViewController()
@@ -61,20 +65,17 @@ class OurDefaults {
         }
     }
     
-    func saveUserDefaults(username: String, password: String, autoLogin: Bool) {
+    func saveUserDefaults(username: String, password: String, autoLogin: Bool, useiCloud: Bool) {
         self.username = username
         self.password = password
         self.autoLogin = autoLogin
+        self.useiCloud = useiCloud
         
         UserDefaults.standard.set(username, forKey: "username")
         UserDefaults.standard.set(password, forKey: "password")
         UserDefaults.standard.set(autoLogin, forKey: "autologin")
+        UserDefaults.standard.set(useiCloud, forKey: "icloud")
         UserDefaults.standard.synchronize()
-        
-        print(username)
-        print(password)
-        print(autoLogin)
-
     }
 }
 
