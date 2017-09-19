@@ -17,16 +17,6 @@ class LaunchingViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        //Lets Pause on the Launch Screen for 3 seconds)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
-            OurDefaults.shared.loadUserDefaults()
-        })
     }
     
-    func sendToFirstScreen(screen: UIViewController) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = screen
-        self.present(screen, animated: true, completion: nil)
-    }
 }

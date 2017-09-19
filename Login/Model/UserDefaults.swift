@@ -16,6 +16,11 @@ class OurDefaults {
     var  username: String = ""
     var  password: String = ""
     var  autoLogin: Bool = false
+    
+    var  usingGameKit: Bool = false
+    var  isInBackground: Bool = false
+    var  gkPlayerID: String = ""
+    
     var  useiCloud: Bool = false
 
     private init() {
@@ -37,45 +42,21 @@ class OurDefaults {
         //  Bools have a default of false for UesrDefaults ( Initial Case)
         
         autoLogin = UserDefaults.standard.bool(forKey: "autologin")
-        useiCloud = UserDefaults.standard.bool(forKey: "icloud")
-                        
-        if autoLogin {
-            
-            //   Show Home View Controller
-            
-            let mainStoryBoard: UIStoryboard = UIStoryboard(name:"Main", bundle: nil)
-            let homeViewController: UIViewController = mainStoryBoard.instantiateViewController(withIdentifier: "HomeNC")
-            let lvc = LaunchingViewController()
-            lvc.sendToFirstScreen(screen: homeViewController)
-            
-        } else {
-            
-            //Show Login View Controller
-            
-            if useiCloud {
-                ckUserData.loadUsers()
-            } else {
-                userData.loadUsers()
-            }
-
-            let mainStoryBoard: UIStoryboard = UIStoryboard(name:"Main", bundle: nil)
-            let loginViewController: UIViewController = mainStoryBoard.instantiateViewController(withIdentifier: "LoginVC")
-            let lvc = LaunchingViewController()
-            lvc.sendToFirstScreen(screen: loginViewController)
-        }
+//        useiCloud = UserDefaults.standard.bool(forKey: "icloud")
+        
     }
     
-    func saveUserDefaults(username: String, password: String, autoLogin: Bool, useiCloud: Bool) {
+    func saveUserDefaults(username: String, password: String, autoLogin: Bool) {
         self.username = username
         self.password = password
         self.autoLogin = autoLogin
-        self.useiCloud = useiCloud
+//        self.useiCloud = useiCloud
         
         UserDefaults.standard.set(username, forKey: "username")
         UserDefaults.standard.set(password, forKey: "password")
         UserDefaults.standard.set(autoLogin, forKey: "autologin")
         UserDefaults.standard.set(useiCloud, forKey: "icloud")
-        UserDefaults.standard.synchronize()
+//        UserDefaults.standard.synchronize()
     }
 }
 

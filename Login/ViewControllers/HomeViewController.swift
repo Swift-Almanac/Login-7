@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        logoutButton.isEnabled = !OurDefaults.shared.usingGameKit
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,10 +25,8 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func LogOutAction(_ sender: UIBarButtonItem) {
-        
-        let mainStoryBoard: UIStoryboard = UIStoryboard(name:"Main", bundle: nil)
-        let loginViewController: UIViewController = mainStoryBoard.instantiateViewController(withIdentifier: "LoginVC")
-        self.present(loginViewController, animated: true, completion: nil)
+
+        moveToLoginScreen()
     }
 }
 

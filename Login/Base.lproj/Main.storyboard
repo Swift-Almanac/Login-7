@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -85,7 +84,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vBQ-1m-AIj" userLabel="iCloud Switch">
-                                <rect key="frame" x="199.5" y="368.5" width="62" height="30"/>
+                                <rect key="frame" x="200" y="368.5" width="62" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="MnK-77-lus"/>
                                     <constraint firstAttribute="width" constant="60" id="ZLm-Am-BEk"/>
@@ -115,6 +114,27 @@
                                     <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HeL-LG-qBw"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFp-Zv-cMr">
+                                <rect key="frame" x="130" y="202" width="60" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="JiW-VB-Qt7"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Ou0-tc-KqG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9Q-7f-4FP" userLabel="GKButton">
+                                <rect key="frame" x="124" y="114" width="72" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="dYM-0B-fxz"/>
+                                    <constraint firstAttribute="width" constant="72" id="oAn-sN-ayv"/>
+                                </constraints>
+                                <state key="normal" image="Gamekit"/>
+                                <connections>
+                                    <action selector="gcAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZrC-Sa-bjS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -124,6 +144,7 @@
                             <constraint firstItem="kh4-z1-bOh" firstAttribute="top" secondItem="CIj-Dq-jX7" secondAttribute="bottom" constant="16" id="4mS-HF-ipP"/>
                             <constraint firstItem="l3d-EF-Zfg" firstAttribute="top" secondItem="fdn-HX-le3" secondAttribute="bottom" constant="21" id="BmM-W1-m5Q"/>
                             <constraint firstItem="CIj-Dq-jX7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="C3C-vy-ZUq"/>
+                            <constraint firstItem="s9Q-7f-4FP" firstAttribute="bottom" secondItem="AFp-Zv-cMr" secondAttribute="top" constant="-16" id="Jkh-oI-Cg6"/>
                             <constraint firstItem="lUC-hr-MHZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="OMg-OS-bMY"/>
                             <constraint firstItem="vBQ-1m-AIj" firstAttribute="trailing" secondItem="FbL-ZY-K65" secondAttribute="trailing" id="ScA-1R-dti"/>
                             <constraint firstItem="CIj-Dq-jX7" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-40" id="Wht-In-rub"/>
@@ -131,10 +152,13 @@
                             <constraint firstItem="kh4-z1-bOh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bBz-Qs-LBj"/>
                             <constraint firstItem="l3d-EF-Zfg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="gIQ-Xr-vJm"/>
                             <constraint firstItem="fdn-HX-le3" firstAttribute="top" secondItem="kh4-z1-bOh" secondAttribute="bottom" constant="21" id="j5V-Sl-zbM"/>
+                            <constraint firstItem="AFp-Zv-cMr" firstAttribute="centerX" secondItem="CIj-Dq-jX7" secondAttribute="centerX" id="meq-Ob-Up8"/>
                             <constraint firstItem="lUC-hr-MHZ" firstAttribute="trailing" secondItem="kh4-z1-bOh" secondAttribute="trailing" id="oCD-6w-AwN"/>
+                            <constraint firstItem="s9Q-7f-4FP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="oOH-xn-kqu"/>
                             <constraint firstItem="FbL-ZY-K65" firstAttribute="trailing" secondItem="kh4-z1-bOh" secondAttribute="trailing" id="pmv-f0-4vq"/>
                             <constraint firstItem="lUC-hr-MHZ" firstAttribute="top" secondItem="vBQ-1m-AIj" secondAttribute="bottom" constant="24.5" id="tJQ-Ud-y4c"/>
                             <constraint firstItem="fdn-HX-le3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="tM1-5Q-9dZ"/>
+                            <constraint firstItem="CIj-Dq-jX7" firstAttribute="top" secondItem="AFp-Zv-cMr" secondAttribute="bottom" constant="16" id="xB3-DM-0G6"/>
                             <constraint firstItem="l3d-EF-Zfg" firstAttribute="trailing" secondItem="vBQ-1m-AIj" secondAttribute="leading" constant="-16" id="xQB-p8-03Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -143,6 +167,7 @@
                     <connections>
                         <outlet property="autoLoginSwitch" destination="FbL-ZY-K65" id="DA2-Wa-kGP"/>
                         <outlet property="emailText" destination="CIj-Dq-jX7" id="KgK-Db-bhO"/>
+                        <outlet property="gcButton" destination="s9Q-7f-4FP" id="SjU-ec-K4H"/>
                         <outlet property="loginButton" destination="lUC-hr-MHZ" id="Wri-tP-jus"/>
                         <outlet property="loginLabel" destination="fdn-HX-le3" id="4eL-nx-fJq"/>
                         <outlet property="passwordText" destination="kh4-z1-bOh" id="aGY-uM-brB"/>
@@ -217,4 +242,7 @@
             <point key="canvasLocation" x="1556" y="-61"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Gamekit" width="225" height="225"/>
+    </resources>
 </document>

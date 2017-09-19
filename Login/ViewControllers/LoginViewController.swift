@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var autoLoginSwitch: UISwitch!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var gcButton: UIButton!
     @IBOutlet weak var useiCloudSwitch: UISwitch!
     
     override func viewDidLoad() {
@@ -55,18 +56,13 @@ class LoginViewController: UIViewController {
     
     func saveUserDefaults(username: String, password: String) {
         if autoLoginSwitch.isOn {
-            OurDefaults.shared.saveUserDefaults(username: username, password: password, autoLogin: autoLoginSwitch.isOn, useiCloud: useiCloudSwitch.isOn)
+            OurDefaults.shared.saveUserDefaults(username: username, password: password, autoLogin: autoLoginSwitch.isOn)
         }
         else {
-            OurDefaults.shared.saveUserDefaults(username: "", password: "", autoLogin: false, useiCloud: useiCloudSwitch.isOn)
+            OurDefaults.shared.saveUserDefaults(username: "", password: "", autoLogin: false)
         }
     }
     
-    func moveToHomeController() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc  = storyboard.instantiateViewController(withIdentifier: "HomeNC") as! UINavigationController
-        show(vc, sender: self)
-    }
     
     @IBAction func useiCloudSwitch(_ sender: UISwitch) {
         
@@ -82,6 +78,20 @@ class LoginViewController: UIViewController {
         }
         else {
             print ("No iCloud")
+        }
+        
+    }
+    
+    @IBAction func gcAction(_ sender: UIButton) {
+        
+        guard let settingsURL = URL(string: UIApplicationOpenSettingsURLString) else {
+            print("failed")
+            return
+        }
+        if UIApplication.shared.canOpenURL(settingsURL) {
+            UIApplication.shared.open(settingsURL, completionHandler:{(success) in
+                print ("SettingsOpened: \(success)")
+            })
         }
         
     }
@@ -122,8 +132,8 @@ class LoginViewController: UIViewController {
     
     func loginSucceeded(username: String, password: String) {
         print ("Login Succeeded")
-        OurDefaults.shared.saveUserDefaults(username: username, password: password, autoLogin: autoLoginSwitch.isOn, useiCloud: useiCloudSwitch.isOn)
-        moveToHomeController()
+        OurDefaults.shared.saveUserDefaults(username: username, password: password, autoLogin: autoLoginSwitch.isOn)
+        moveToHomeScreen()
     }
     
     func loginFailed() {
