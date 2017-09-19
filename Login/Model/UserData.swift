@@ -16,7 +16,7 @@ enum LoginResults {
     case loginSucceeds
 }
 
-struct User {
+struct MyUser {
     var username: String = ""
     var password: String = ""
 }
@@ -25,7 +25,7 @@ class UserData {
     
     static let shared = UserData()
     
-    var users: [User] = []
+    var users: [MyUser] = []
     
     private init() {
     
@@ -90,7 +90,7 @@ class UserData {
     }
     
     func addUser(username: String, password: String) {
-        let tempUser = User(username: username.lowercased(), password: password)
+        let tempUser = MyUser(username: username.lowercased(), password: password)
         users.append(tempUser)
     }
     

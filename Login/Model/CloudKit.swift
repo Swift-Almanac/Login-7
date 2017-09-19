@@ -14,7 +14,7 @@ class CKUserData {
 
     static let  shared = CKUserData()
     
-    var users: [User] = []
+    var users: [MyUser] = []
     var privateDB : CKDatabase = CKContainer.default().privateCloudDatabase
     
     private init() {
@@ -64,7 +64,7 @@ class CKUserData {
     }
     
     func addUser(username: String, password: String) {
-        let tempUser = User(username: username.lowercased(), password: password)
+        let tempUser = MyUser(username: username.lowercased(), password: password)
         users.append(tempUser)
     }
 

@@ -10,6 +10,8 @@
 		61E98F017A4EF52785EAF320 /* Pods_Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C86613B7D8E01D9A8CCB99 /* Pods_Login.framework */; };
 		BE17762A1F6F5587007A30D6 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1776291F6F5587007A30D6 /* CloudKit.framework */; };
 		BE17764A1F6F7049007A30D6 /* CloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1776491F6F7049007A30D6 /* CloudKit.swift */; };
+		BE41C8021F71BF1E0024D3B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE41C8011F71BF1E0024D3B5 /* GoogleService-Info.plist */; };
+		BE41C8041F71C1FC0024D3B5 /* AppDelegate + GoogleSignin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE41C8031F71C1FC0024D3B5 /* AppDelegate + GoogleSignin.swift */; };
 		BEA1B4311F6F4FD70018AAC2 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA1B4301F6F4FD70018AAC2 /* GameKit.framework */; };
 		BEB72AA71F5771120067BC00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB72AA61F5771120067BC00 /* AppDelegate.swift */; };
 		BEB72AA91F5771120067BC00 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB72AA81F5771120067BC00 /* LoginViewController.swift */; };
@@ -30,6 +32,8 @@
 		74DC67782B1658C314032516 /* Pods-Login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login.release.xcconfig"; path = "Pods/Target Support Files/Pods-Login/Pods-Login.release.xcconfig"; sourceTree = "<group>"; };
 		BE1776291F6F5587007A30D6 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		BE1776491F6F7049007A30D6 /* CloudKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKit.swift; sourceTree = "<group>"; };
+		BE41C8011F71BF1E0024D3B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BE41C8031F71C1FC0024D3B5 /* AppDelegate + GoogleSignin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate + GoogleSignin.swift"; sourceTree = "<group>"; };
 		BEA1B4301F6F4FD70018AAC2 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		BEA1B4321F6F4FDA0018AAC2 /* Login.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Login.entitlements; sourceTree = "<group>"; };
 		BEB72AA31F5771120067BC00 /* Login.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Login.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +101,7 @@
 				BEB72AAA1F5771120067BC00 /* Main.storyboard */,
 				BEB72AA61F5771120067BC00 /* AppDelegate.swift */,
 				BEB72AB51F5771120067BC00 /* Info.plist */,
+				BE41C8011F71BF1E0024D3B5 /* GoogleService-Info.plist */,
 				BEB72ABB1F5771290067BC00 /* ViewControllers */,
 				BEEF0F481F5CF5ED003A978F /* Extensions */,
 				BEEF0F4D1F5CF959003A978F /* Model */,
@@ -118,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				BEC7BA1D1F708CEC00B5BFE5 /* AppDelegate + GameKit.swift */,
+				BE41C8031F71C1FC0024D3B5 /* AppDelegate + GoogleSignin.swift */,
 				BEEF0F4B1F5CF7AD003A978F /* LoginViewController+TextField.swift */,
 				BEEF0F491F5CF605003A978F /* String+ValidEmail.swift */,
 			);
@@ -221,6 +227,7 @@
 			files = (
 				BEB72AB11F5771120067BC00 /* Assets.xcassets in Resources */,
 				BEB72AAC1F5771120067BC00 /* Main.storyboard in Resources */,
+				BE41C8021F71BF1E0024D3B5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,11 +241,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Login/Pods-Login-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -269,9 +284,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Login/Pods-Login-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -291,6 +309,7 @@
 				BEC7BA1E1F708CEC00B5BFE5 /* AppDelegate + GameKit.swift in Sources */,
 				BEB72AA91F5771120067BC00 /* LoginViewController.swift in Sources */,
 				BE17764A1F6F7049007A30D6 /* CloudKit.swift in Sources */,
+				BE41C8041F71C1FC0024D3B5 /* AppDelegate + GoogleSignin.swift in Sources */,
 				BEEF0F4C1F5CF7AD003A978F /* LoginViewController+TextField.swift in Sources */,
 				BEDFD8391F5D6CA500190545 /* UserDefaults.swift in Sources */,
 				BEB72AA71F5771120067BC00 /* AppDelegate.swift in Sources */,
@@ -361,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -412,7 +431,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

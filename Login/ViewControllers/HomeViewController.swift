@@ -7,11 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var logoutButton: UIBarButtonItem!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,8 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func LogOutAction(_ sender: UIBarButtonItem) {
-
+        
+        firebaseLogOut()
         moveToLoginScreen()
     }
 }

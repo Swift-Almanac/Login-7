@@ -8,9 +8,10 @@
 
 import UIKit
 import CloudKit
+import Firebase
+import GoogleSignIn
 
-
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
     var activeTF = UITextField()
     
@@ -34,6 +35,8 @@ class LoginViewController: UIViewController {
         passwordText.addTarget(self, action: #selector(LoginViewController.textFieldDidChange(_:)),
                             for: UIControlEvents.editingChanged)
         
+        GIDSignIn.sharedInstance().uiDelegate = self
+
         setDefaultValues()
         checkLoginButtonActive()
     }
@@ -75,7 +78,7 @@ class LoginViewController: UIViewController {
             })
         }
     }
-    
+        
     @IBAction func useiCloudSwitch(_ sender: UISwitch) {
         
         if sender.isOn {
