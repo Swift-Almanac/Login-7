@@ -9,8 +9,6 @@
 import UIKit
 import CoreData
 
-var userData = UserData()
-
 enum LoginResults {
     case userNotExist
     case userExists
@@ -25,9 +23,12 @@ struct User {
 
 class UserData {
     
+    static let shared = UserData()
+    
     var users: [User] = []
     
-    init() {
+    private init() {
+    
     }
     
     func loadUsers() {

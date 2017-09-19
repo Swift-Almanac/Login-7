@@ -21,7 +21,7 @@ extension AppDelegate : GKGameCenterControllerDelegate {
                     OurDefaults.shared.gkPlayerID = localPlayer.playerID!
                     OurDefaults.shared.isInBackground = false
                     OurDefaults.shared.usingGameKit = true
-                    OurDefaults.shared.saveUserDefaults(username: "", password: "", autoLogin: false)
+                    OurDefaults.shared.saveUserDefaults(username: "", password: "", autoLogin: false, useiCloud: false)
                     moveToHomeScreen()
                 } else {
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate

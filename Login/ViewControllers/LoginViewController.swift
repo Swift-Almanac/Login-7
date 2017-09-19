@@ -56,23 +56,40 @@ class LoginViewController: UIViewController {
     
     func saveUserDefaults(username: String, password: String) {
         if autoLoginSwitch.isOn {
-            OurDefaults.shared.saveUserDefaults(username: username, password: password, autoLogin: autoLoginSwitch.isOn)
+            OurDefaults.shared.saveUserDefaults(username: username, password: password, autoLogin: autoLoginSwitch.isOn, useiCloud: useiCloudSwitch.isOn)
         }
         else {
-            OurDefaults.shared.saveUserDefaults(username: "", password: "", autoLogin: false)
+            OurDefaults.shared.saveUserDefaults(username: "", password: "", autoLogin: false, useiCloud: useiCloudSwitch.isOn)
         }
     }
     
+    @objc func openSettings() {
+        
+        guard let settingsURL = URL(string: UIApplicationOpenSettingsURLString) else {
+            print("failed")
+            return
+        }
+        if UIApplication.shared.canOpenURL(settingsURL) {
+            UIApplication.shared.open(settingsURL, completionHandler:{(success) in
+                print ("SettingsOpened: \(success)")
+            })
+        }
+    }
     
     @IBAction func useiCloudSwitch(_ sender: UISwitch) {
         
         if sender.isOn {
             print ("Test for iCloud")
-            if ckUserData.testCloudKit() {
+            if CKUserData.shared.testCloudKit() {
                 print ("CloudKit is Configured.")
             } else {
                 print ("CloudKit Not Configured.")
-                // Need an Alert set Use iCloud to Off !
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let currentViewController = appDelegate.window?.rootViewController
+                let alert = UIAlertController(title: "Cloud Kit", message: "Go To Settings to Enable CloudKit", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+                alert.addAction(UIAlertAction(title: "Settings", style: .default) {(action) in self.openSettings()})
+                currentViewController?.present(alert, animated: true, completion: nil)
                 sender.isOn = false
             }
         }
@@ -84,16 +101,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func gcAction(_ sender: UIButton) {
         
-        guard let settingsURL = URL(string: UIApplicationOpenSettingsURLString) else {
-            print("failed")
-            return
-        }
-        if UIApplication.shared.canOpenURL(settingsURL) {
-            UIApplication.shared.open(settingsURL, completionHandler:{(success) in
-                print ("SettingsOpened: \(success)")
-            })
-        }
-        
+        openSettings()
     }
     
     @IBAction func loginButton(_ sender: UIButton) {
@@ -103,12 +111,12 @@ class LoginViewController: UIViewController {
         
         if OurDefaults.shared.useiCloud {
             print("Use Cloud")
-            if ckUserData.checkUser(username: username) == LoginResults.userNotExist {
-                ckUserData.addUser(username: username, password: password)
-                ckUserData.saveUsers()
+            if CKUserData.shared.checkUser(username: username) == LoginResults.userNotExist {
+                CKUserData.shared.addUser(username: username, password: password)
+                CKUserData.shared.saveUsers()
                 loginSucceeded(username: username, password: password)
             } else {
-                if ckUserData.login(username: username, password: password) == .loginSucceeds {
+                if CKUserData.shared.login(username: username, password: password) == .loginSucceeds {
                     loginSucceeded(username: username, password: password)
                 } else { // Login Failed
                     loginFailed()
@@ -116,12 +124,12 @@ class LoginViewController: UIViewController {
             }
         } else {
             print ("Use Core Data")
-            if userData.checkUser(username: username) == LoginResults.userNotExist {
-                userData.addUser(username: username, password: password)
-                userData.saveUsers()
+            if UserData.shared.checkUser(username: username) == LoginResults.userNotExist {
+                UserData.shared.addUser(username: username, password: password)
+                UserData.shared.saveUsers()
                 loginSucceeded(username: username, password: password)
             } else {
-                if userData.login(username: username, password: password) == .loginSucceeds {
+                if UserData.shared.login(username: username, password: password) == .loginSucceeds {
                     loginSucceeded(username: username, password: password)
                 }else { // Login Failed
                     loginFailed()
@@ -132,7 +140,7 @@ class LoginViewController: UIViewController {
     
     func loginSucceeded(username: String, password: String) {
         print ("Login Succeeded")
-        OurDefaults.shared.saveUserDefaults(username: username, password: password, autoLogin: autoLoginSwitch.isOn)
+        OurDefaults.shared.saveUserDefaults(username: username, password: password, autoLogin: autoLoginSwitch.isOn, useiCloud: useiCloudSwitch.isOn)
         moveToHomeScreen()
     }
     

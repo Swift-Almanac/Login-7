@@ -9,14 +9,15 @@
 import Foundation
 import CloudKit
 
-var ckUserData = CKUserData()
 
 class CKUserData {
+
+    static let  shared = CKUserData()
     
     var users: [User] = []
     var privateDB : CKDatabase = CKContainer.default().privateCloudDatabase
     
-    init() {
+    private init() {
     }
     
     func loadUsers() {

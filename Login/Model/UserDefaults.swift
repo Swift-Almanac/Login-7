@@ -42,21 +42,26 @@ class OurDefaults {
         //  Bools have a default of false for UesrDefaults ( Initial Case)
         
         autoLogin = UserDefaults.standard.bool(forKey: "autologin")
-//        useiCloud = UserDefaults.standard.bool(forKey: "icloud")
+        useiCloud = UserDefaults.standard.bool(forKey: "icloud")
         
+        if useiCloud && !usingGameKit {
+            CKUserData.shared.loadUsers()
+        } else {
+            UserData.shared.loadUsers()
+        }
     }
     
-    func saveUserDefaults(username: String, password: String, autoLogin: Bool) {
+    func saveUserDefaults(username: String, password: String, autoLogin: Bool, useiCloud: Bool) {
         self.username = username
         self.password = password
         self.autoLogin = autoLogin
-//        self.useiCloud = useiCloud
+        self.useiCloud = useiCloud
         
         UserDefaults.standard.set(username, forKey: "username")
         UserDefaults.standard.set(password, forKey: "password")
         UserDefaults.standard.set(autoLogin, forKey: "autologin")
         UserDefaults.standard.set(useiCloud, forKey: "icloud")
-//        UserDefaults.standard.synchronize()
+        UserDefaults.standard.synchronize()
     }
 }
 
