@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FacebookCore
 
 class HomeViewController: UIViewController {
 
@@ -26,6 +27,11 @@ class HomeViewController: UIViewController {
     
     @IBAction func LogOutAction(_ sender: UIBarButtonItem) {
         
+        if fbAccessToken != nil {
+            AccessToken.current = nil
+            fbAccessToken = nil
+        }
+
         firebaseLogOut()
         moveToLoginScreen()
     }

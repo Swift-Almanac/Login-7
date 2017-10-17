@@ -11,7 +11,9 @@ import CoreData
 import IQKeyboardManager
 import Firebase
 import GoogleSignIn
+import FacebookCore
 
+var fbAccessToken: AccessToken?
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,13 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        
         IQKeyboardManager.shared().isEnabled = true
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
         currentUser = Auth.auth().currentUser
-        
+        fbAccessToken = AccessToken.current
+
         OurDefaults.shared.loadUserDefaults()
 
         if currentUser == nil {
@@ -40,9 +45,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
         -> Bool {
-            return GIDSignIn.sharedInstance().handle(url,
-                                                     sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
-                                                     annotation: [:])
+            
+            let handled: Bool = SDKApplicationDelegate.shared.application(application, open: url,  options: options)
+
+            if !handled {
+                return GIDSignIn.sharedInstance().handle(url, sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                                                         annotation: [:])
+            }
+            return true
     }
     
     

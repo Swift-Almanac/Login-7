@@ -44,6 +44,7 @@ extension AppDelegate : GIDSignInDelegate {
 
 func firebaseLogOut() {
     if currentUser != nil {
+        OurDefaults.shared.saveUserDefaults(username: "", password: "", autoLogin: false, useiCloud: false)
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()

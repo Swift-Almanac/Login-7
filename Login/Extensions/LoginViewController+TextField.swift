@@ -19,11 +19,6 @@ extension LoginViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField === emailText {
-            emailText.text = textField.text
-        }
-        else if textField === passwordText {
-            passwordText.text = textField.text
-        }
+
     }
 }

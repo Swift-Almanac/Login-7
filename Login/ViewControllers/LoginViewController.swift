@@ -10,6 +10,8 @@ import UIKit
 import CloudKit
 import Firebase
 import GoogleSignIn
+import FacebookCore
+import FacebookLogin
 
 class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
@@ -34,6 +36,13 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         passwordText.delegate = self
         passwordText.addTarget(self, action: #selector(LoginViewController.textFieldDidChange(_:)),
                             for: UIControlEvents.editingChanged)
+        
+        let faceLoginButton = UIButton(frame: CGRect(x: (view.frame.width/2) - 90, y: 120, width: 180, height: 40))
+        let image = UIImage(named: "facebook")
+        faceLoginButton.setImage(image, for: .normal)
+        faceLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: .touchUpInside)
+        
+        view.addSubview(faceLoginButton)
         
         GIDSignIn.sharedInstance().uiDelegate = self
 
@@ -140,6 +149,33 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
             }
         }
     }
+    
+    @objc func loginButtonClicked() {
+        let loginManager = LoginManager()
+        loginManager.logIn(readPermissions: [.publicProfile], viewController: self) {loginResult in
+            switch loginResult {
+            case .failed(let error):
+                print("error: \(error)")
+            case .cancelled:
+                print("User cancelled login.")
+            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+                print(grantedPermissions)
+                print(declinedPermissions)
+                fbAccessToken = accessToken
+                let credential = FacebookAuthProvider.credential(withAccessToken: (fbAccessToken?.authenticationToken)!)
+                Auth.auth().signIn(with: credential) { (user, error) in
+                    if let error = error {
+                        print(error)
+                        return
+                    }
+                    currentUser = Auth.auth().currentUser
+                    moveToHomeScreen()
+                    print("Logged in!")
+                }
+            }
+        }
+    }
+
     
     func loginSucceeded(username: String, password: String) {
         print ("Login Succeeded")
